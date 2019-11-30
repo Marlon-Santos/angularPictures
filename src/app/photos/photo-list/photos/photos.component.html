@@ -1,0 +1,4 @@
+<li *ngFor="let photo of photos">
+  <app-photo [url]="photo.url" [description]="photo.description"></app-photo>
+</li>
+<h1 *ngIf="!photos.length">ERROR IMAGE NOT FOUND</h1>

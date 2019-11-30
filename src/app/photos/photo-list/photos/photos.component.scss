@@ -1,0 +1,10 @@
+li {
+  >app-photo {
+    display: flex;
+    justify-content: center;
+  }
+
+  border: 5px solid white;
+  flex-basis: 33.33%;
+  background-color: aqua;
+}
