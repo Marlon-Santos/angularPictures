@@ -1,6 +1,15 @@
-<h1>{{ title }}</h1>
-<app-photo
-  *ngFor="let photo of photos"
-  [url]="photo.url"
-  [description]="photo.description"
-></app-photo>
+<form (submit)="$event.preventDefault()">
+  <fieldset>
+    <legend>FOTOS</legend>
+    <input
+      type="search"
+      name="search"
+      placeholder="pesquise uma foto"
+      (keyup)="filter = $event.target.value"
+    />
+  </fieldset>
+</form>
+
+<ol>
+  <app-photos [photos]="photos | filterPhotos: filter"></app-photos>
+</ol>
