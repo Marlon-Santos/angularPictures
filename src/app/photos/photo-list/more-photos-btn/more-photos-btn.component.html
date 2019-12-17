@@ -1,0 +1,7 @@
+<button type="button" *ngIf="hasPhoto; else messageTemplate">
+  Load More Photos
+</button>
+
+<ng-template #messageTemplate>
+  <p>no more photos</p>
+</ng-template>
