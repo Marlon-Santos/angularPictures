@@ -5,7 +5,7 @@
       type="search"
       name="search"
       placeholder="pesquise uma foto"
-      (keyup)="filter = $event.target.value"
+      (keyup)="debounce.next($event.target.value)"
     />
   </fieldset>
 </form>
@@ -13,3 +13,7 @@
 <ol>
   <app-photos [photos]="photos | filterPhotos: filter"></app-photos>
 </ol>
+<app-morephotos-btn
+  [hasPhoto]="hasPhoto"
+  (click)="loadPhoto()"
+></app-morephotos-btn>
