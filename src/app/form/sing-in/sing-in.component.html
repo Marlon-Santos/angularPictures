@@ -1,17 +1,28 @@
-<form>
+<form [formGroup]="loginForm">
   <fieldset>
     <legend>Sing-In</legend>
     <div>
       <input
+        formControlName="userName"
         type="email"
         placeholder="email"
         autocomplete="email"
         spellcheck="false"
       />
+      <small *ngIf="loginForm.get('userName').errors?.required">
+        *is Required</small
+      >
     </div>
     <div>
-      <input type="password" placeholder="password" />
+      <input
+        formControlName="password"
+        type="password"
+        placeholder="password"
+      />
+      <small *ngIf="loginForm.get('password').errors?.required">
+        *is Required
+      </small>
     </div>
-    <input type="submit" value="Entrar" />
+    <button [disabled]="loginForm.invalid" type="submit">Entrar</button>
   </fieldset>
 </form>
