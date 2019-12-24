@@ -1,17 +1,17 @@
-<form [formGroup]="loginForm">
+<form [formGroup]="loginForm" (submit)="singIn()">
   <fieldset>
     <legend>Sing-In</legend>
     <div>
       <input
         formControlName="userName"
         type="email"
-        placeholder="email"
-        autocomplete="email"
+        placeholder="userName"
+        autocomplete="name"
         spellcheck="false"
       />
       <small *ngIf="loginForm.get('userName').errors?.required">
-        *is Required</small
-      >
+        *is Required
+      </small>
     </div>
     <div>
       <input
